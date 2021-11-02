@@ -23,8 +23,17 @@ void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glLoadIdentity();
+	//drawing the top rectangle
+	glBegin(GL_QUADS);
+	glColor4f(0.0f, 1.5f, 1.0f, 1.0f);
+	//vertices
+	glVertex2f(-9.0, 0.0);
+	glVertex2f(-9.0, 2.0);
+	glVertex2f(9.0, 2.0);
+	glVertex2f(9.0, 0.0);
 
-	//drawing rectangle part
+
+	//drawing the lower rectangle 
 	glBegin(GL_QUADS);
 
 	//vertices
@@ -57,13 +66,21 @@ void display()
 
 	glEnd();
 
-	//drawing lines
+	//drawing window lines for the first window
 	glBegin(GL_LINES);
 	glColor3f(0.0, 0.0, 1.0);
 	glVertex2f(-6.0, -2.0);
 	glVertex2f(-6.0, -4.0);
 	glVertex2f(-7.0, -3.0);
 	glVertex2f(-5.0, -3.0);
+	//drawing lines for the 2nd window
+	glBegin(GL_LINES);
+	glColor3f(0.0, 0.0, 1.0);
+	glVertex2f(6.0, -2.0);
+	glVertex2f(6.0, -4.0);
+	glVertex2f(7.0, -3.0);
+	glVertex2f(5.0, -3.0);
+
 
 
 	glEnd();
