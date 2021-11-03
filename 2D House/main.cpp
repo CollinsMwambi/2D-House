@@ -124,7 +124,7 @@ void display()
 
 	
     glEnd();
-    drawCrescentLine(0.01, 1.0, -0.7f);  //*CRESENT
+    drawCrescentLine(0.01, -1.0, -0.7f);  //*CRESENT
 
 
 
