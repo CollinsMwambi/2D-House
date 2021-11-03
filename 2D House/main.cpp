@@ -104,6 +104,26 @@ void display()
 
 
 	glEnd();
+	//new code 
+	glBegin(GL_LINE_STRIP);
+
+	glColor3f(0.0, 0.0, 1.0);
+	glVertex2f(-7.0, 2.0);
+	glVertex2f(-7.0,2.0);
+	glVertex2f(-6.0,3.0);
+	glVertex2f(-4.0, 3.5);
+	glVertex2f(-2.0, 4.0);
+	glVertex2f(0.0, 4.0);
+
+	glVertex2f(2.0, 4.0);
+	glVertex2f(4.0, 3.5);
+	glVertex2f(6.0, 3.0);
+	glVertex2f(7.0, 2.0);
+
+
+
+	
+    glEnd();
     drawCrescentLine(0.01, 1.0, -0.7f);  //*CRESENT
 
 
