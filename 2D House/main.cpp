@@ -1,6 +1,10 @@
+#define _USE_MATH_DEFINES  //*CRESENT
+#include <cmath>  //*CRESENT
 #include <stdio.h>
 #include <GL/glut.h>
 #include <math.h> //*CRESENT
+
+
 
 
 
@@ -15,6 +19,7 @@ int main(int argc, char** argv)
 	glutInitWindowPosition(300, 100);//where window will be displayed
 	glutInitWindowSize(600, 600);//width and height of window
 	glutCreateWindow("2D HOUSE");//Create window,name of window 2D house
+	glClearColor(233.0f / 255.0f, 179.0f / 255.0f, 0.0f / 255.0f, 1.0f);  //*CRESENT
 
 
 	glutDisplayFunc(display);
@@ -117,8 +122,21 @@ void display()
     glEnd();
 
 
+	glBegin(GL_LINE_STRIP);
 
-	glEnd();
+	glColor3f(0.0, 0.0, 1.0);
+	glVertex2f(-7.0, 2.0);
+	glVertex2f(-7.0, 2.0);
+	glVertex2f(-6.0, 3.0);
+	glVertex2f(-4.0, 3.5);
+	glVertex2f(-2.0, 4.0);
+	glVertex2f(0.0, 4.0);
+
+	glVertex2f(2.0, 4.0);
+	glVertex2f(4.0, 3.5);
+	glVertex2f(6.0, 3.0);
+	glVertex2f(7.0, 2.0);
+
 
 
 	
@@ -141,4 +159,21 @@ void display()
 
 
 
+}
+void drawCrescentLine(float step, float scale, float fullness) {
+	glBegin(GL_LINE_STRIP);
+	float rightFullness = 0.5f;
+	float leftFullness = 1.0f;
+	glColor3f(117.0f / 255.0f, 166.0f / 255.0f, 217.0f / 255.0f);
+	float angle = 0.0f;
+	while (angle < M_PI) {
+		glVertex2f(scale * sinf(angle), scale * cosf(angle));
+		angle += step;
+	}
+	while (angle < (2.0f * M_PI)) {
+		glVertex2f(fullness * scale * sinf(angle), scale * cosf(angle));
+		angle += step;
+	}
+	glVertex2f(0.0f, scale);
+	glEnd();
 }
