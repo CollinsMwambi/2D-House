@@ -1,11 +1,12 @@
- #include <stdio.h>
+#include <stdio.h>
 #include <GL/glut.h>
+#include <math.h> //*CRESENT
 
 
 
 void display();
 void reshape(int, int);
-
+void drawCrescentLine(float step, float scale, float fullness);  //*CRESENT
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);//initializing glut library
@@ -14,11 +15,12 @@ int main(int argc, char** argv)
 	glutInitWindowPosition(300, 100);//where window will be displayed
 	glutInitWindowSize(600, 600);//width and height of window
 	glutCreateWindow("2D HOUSE");//Create window,name of window 2D house
-	
 
 
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
+
+   
 	glutMainLoop();
 
 
@@ -114,11 +116,15 @@ void display()
 
     glEnd();
 
-	
-	
-	
+
+
+	glEnd();
+
 
 	
+    glEnd();
+    drawCrescentLine(0.01, -1.0, -0.7f);  //*CRESENT
+
 
 
 	glFlush();
