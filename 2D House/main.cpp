@@ -1,8 +1,11 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <GL/glut.h>
+
+
 
 void display();
 void reshape(int, int);
+
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);//initializing glut library
@@ -11,6 +14,7 @@ int main(int argc, char** argv)
 	glutInitWindowPosition(300, 100);//where window will be displayed
 	glutInitWindowSize(600, 600);//width and height of window
 	glutCreateWindow("2D HOUSE");//Create window,name of window 2D house
+	
 
 
 	glutDisplayFunc(display);
@@ -19,10 +23,16 @@ int main(int argc, char** argv)
 
 
 }
+
+
+
 void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glLoadIdentity();
+
+
+
 	//drawing the top rectangle
 	glBegin(GL_QUADS);
 	glColor4f(0.0f, 1.5f, 1.0f, 1.0f);
@@ -32,6 +42,7 @@ void display()
 	glVertex2f(9.0, 2.0);
 	glVertex2f(9.0, 0.0);
 
+	glEnd();
 
 	//drawing the lower rectangle 
 	glBegin(GL_QUADS);
@@ -44,6 +55,7 @@ void display()
 
 	glEnd();
 
+
 	//drawing right window
 	glBegin(GL_QUADS);
 	glColor3f(1.0, 0.0, 0.0);
@@ -54,6 +66,8 @@ void display()
 	glVertex2f(7.0, -2.0);
 
 	glEnd();
+
+
 
 	//drawing left window
 	glBegin(GL_QUADS);
@@ -73,6 +87,9 @@ void display()
 	glVertex2f(-6.0, -4.0);
 	glVertex2f(-7.0, -3.0);
 	glVertex2f(-5.0, -3.0);
+
+	glEnd();
+
 	//drawing lines for the 2nd window
 	glBegin(GL_LINES);
 	glColor3f(0.0, 0.0, 1.0);
@@ -85,6 +102,7 @@ void display()
 
 	glEnd();
 
+	
 	//drawing door
 	glBegin(GL_QUADS);
 	glColor3f(1.0, 0.0, 0.0);
@@ -94,14 +112,18 @@ void display()
 	glVertex2f(2.0, -8.0);
 	glVertex2f(2.0, -2.0);
 
+    glEnd();
 
+	
+	
+	
 
-
-	glEnd();
-
+	
 
 
 	glFlush();
+
+
 }void reshape(int w, int h)
 {
 	glViewport(0, 0, w, h);
